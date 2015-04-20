@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}
+Profit at Expiration
+{% endblock title %}
+
+{% block content %}
+Whenever an option is traded, the option buyer pays the option seller some price called the premium. Premium is just a fancy term for the cost of the option itself. Options always cost money to buy because the option buyer is guaranteed to have a positive (or $0) payoff, whereas the option seller is guaranteed to have a negative (or $0) payoff.
+
+We can incorporate the premium into our payoff diagrams to create profit at expiration diagrams. Here is the profit diagram for a long call option with a strike of $17 that costs $2:
+<div id="long_call_chart"></div>
+
+This diagram is equivalent to the payoff diagram for the same option but shifted down by $2. This vertical shift represents the cost paid to buy the option, or the premium. Now we can see why buying call options isn't as easy of a decision; there is potential to lose money. However, the loss is capped while the profit is unlimited. Also, note the breakeven point; the underlying must be greater than the strike price so the premium paid can be recovered.
+
+Here is the profit diagram for a long put option with a strike of $40 that costs $1:
+
+<div id="long_put_chart"></div>
+
+
+We see the same patterns as in the call option. The profit diagram is the payoff diagram shifted down by $1, the premium. The max loss is the premium paid, but the max profit is tricky. In most cases, the underlying cannot be negative (e.g. if the underlying was stock, the stock price can never be negative). In these cases, the max profit would be capped. If the underlying could be negative, the the max profit would be infinite. Regardless, the max profit is very large relative to the max loss. Again, the breakeven is a bit lower than our strike price so our premium can be recovered.
+
+The above profit diagrams are for long option positions, or for the option buyers. Here is the profit diagram for the same call option with strike of $17 that costs $2, but a short position (option seller):
+
+<div id="short_call_chart"></div>
+
+
+The short call option profit diagram is just the long call option profit diagram flipped over the x-axis. This makes sense; the option buyer's gain is the option seller's loss, even when accounting for the premium (since the premium is simply paid from one party to the other). We see the same pattern in the short put option profit diagram:
+<div id="short_put_chart"></div>
+
+<h2> Dynamic Chart</h2>
+<div id="dynamicchart"></div>
+    <select id="optionType">
+        <option value="Call">Call</option>
+        <option value="ShortCall">Short Call</option>
+        <option value="Put">Put</option>
+        <option value="ShortPut">Short Put</option>
+    </select>
+    Name: <input type="text" id="optionName">
+    Strike Price: <input type="text" id="strike">
+    Premium: <input type="text" id="premium">
+
+    <button onclick="addContract()">Add Contract</button>
+    <script type="text/javascript">
+
+        var contracts = {};
+        var straddle = ['Straddle'];
+        var long_call = ['Long Call'];
+        var long_put = ['Long Put'];
+        for (var i = 0; i <= 100; i++) {
+            long_call.push(call_payoff(50, 25, i )/100);
+            long_put.push(put_payoff(50, 25, i )/100);
+            straddle.push(call_payoff(50, 25, i)/100 + put_payoff(50, 25, i)/100);
+        };
+
+        contracts["straddle"] = straddle;
+        contracts["long_call"] = long_call;
+        contracts["long_put"] = long_put;
+
+        var cols = [];
+        for (i in contracts) {
+            cols.push(contracts[i]);
+        }
+
+        var chart = c3.generate({
+            bindto: '#dynamicchart',
+            data: {
+                columns: cols,
+            },
+            point: {
+                show: false
+            },
+            zoom: {
+                enabled: true
+            },
+            size: {
+                width: 650,
+            },
+            padding: {
+                right: 10,
+                top: 10,
+            },
+            tooltip: {
+                format: {
+                    title: function(d) {return "Underlying Price of $" + d;},
+                    value: function(value, ratio, id) {return "$" + value +" profit";},
+                }
+            },
+        });
+
+        var addContract = function() {
+            var contracts = {
+                "Call": call_payoff,
+                "ShortCall": short_call_payoff,
+                "Put": put_payoff,
+                "ShortPut": short_put_payoff
+            };
+            var optionType = document.getElementById("optionType").value;
+            if (optionType in contracts) {
+                var optionName = document.getElementById("optionName").value;
+                var strikePrice = parseInt(document.getElementById("strike").value);
+                var premium = parseInt(document.getElementById("premium").value);
+                var payoff = contracts[optionType];
+                //alert(strikePrice + " " + premium);
+                var option = [optionName];
+                for (var i = 0; i <= 100; i++) {
+                    option.push(payoff(strikePrice,premium,i)/100);
+
+                }
+                chart.load({
+                    columns: [
+                        option
+                    ] //,
+                    //unload: ['data2', 'data3'],
+                });
+            }
+        }
+
+
+
+
+        
+    generate_simple_chart('#long_call_chart', 'Long Call', 17, 2, call_payoff, 26);
+    generate_simple_chart('#long_put_chart', 'Long Put', 40, 1, short_call_payoff, 48);
+    generate_simple_chart('#short_call_chart', 'Short Call', 17, 2, put_payoff, 26);
+    generate_simple_chart('#short_put_chart', 'Short Put', 40, 1, short_put_payoff, 48);
+</script>
+
+{% endblock content %}
+
+{% block parentheticals %}
+Note: We include the at expiration because these diagrams show the profit (or loss) for an option assuming there is no time remaining till expiration. When there is time left, we cannot simply modify the payoff diagram with the premium. This will be explained in the next chapter.
+{% endblock parentheticals %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+Downside vs Upside
+{% endblock title %}
+
+{% block content %}
+Using moneyness is the most common way to describe options; however, some traders don't differential between calls and puts (we'll describe why in a later section). A call and a put at the same strike have different moneyness, so instead these traders use downside and upside to describe options.
+
+Downside options are those with the strike below the current underlying value. ITM calls and OTM puts are downside options. Upside options are those with the strike above the current underlying value. OTM calls and ITM puts are upside options.
+
+If you're learning about options to manage your personal portfolio, you likely will differentiate between calls and puts. So you will use moneyness instead of downside and upside to describe options. Nevertheless, these terms are used often in news, so it's important to be familiar.
+{% endblock content %}
+
+{% block parentheticals %}
+
+{% endblock parentheticals %}

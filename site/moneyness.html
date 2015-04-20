@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Options Education</title>
+  <link rel="stylesheet" type="text/css" href="static/main.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.css" rel="stylesheet" type="text/css">
+  <!-- Load d3.js and c3.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+  <script type="text/javascript" src="static/utils.js"></script>
+</head>
+<body>
+  <div id="container">
+    <table style="width: 100%; vertical-align: top;">
+      <tr>
+        <h2>
+          <a href="./base.html">UCF Options Curriculum</a>
+          
+Moneyness
+
+        </h2>
+      </tr>
+      <hr>
+      <tr>
+        <td style="width: 13em; font-size: 80%; vertical-align: top;">
+          <ul class="navlist">
+            <a href="./about.html">About</a>
+          </ul>
+        
+          <ul class="navlist">
+            <li>
+            <b>Basic Terminology</b>
+              <ul class="subnavlist">
+              
+                <li>
+                  <a href="./calls_and_puts.html">Calls and Puts</a>
+                </li>
+              
+                <li>
+                  <a href="./optionality.html">Optionality</a>
+                </li>
+              
+                <li>
+                  <a href="./contract_specifications.html">Contracts</a>
+                </li>
+              
+                <li>
+                  <a href="./when_to_exercise.html">Exercising</a>
+                </li>
+              
+                <li>
+                  <a href="./moneyness.html">Moneyness</a>
+                </li>
+              
+                <li>
+                  <a href="./down_upside.html">Downside vs Upside</a>
+                </li>
+              
+                <li>
+                  <a href="./options_cost.html">Cost of Options</a>
+                </li>
+              
+              </ul>
+            </li>
+          </ul>
+        
+          <ul class="navlist">
+            <li>
+            <b>Profit Diagrams</b>
+              <ul class="subnavlist">
+              
+                <li>
+                  <a href="./payoff_diagram.html">Payoff</a>
+                </li>
+              
+                <li>
+                  <a href="./profit_at_expiration.html">Profit at Expiration</a>
+                </li>
+              
+              </ul>
+            </li>
+          </ul>
+        
+        </td>
+        <td>
+          <table id="main_outlay">
+            <tbody>
+              <tr>
+              <td class="main_content">
+                
+Moneyness refers to the relationship between the strike price of an option, and the market value of the underlying. In-the-money (ITM) options are those that would be exercised if we were at expiration. For calls, this means the underlying value is greater than the strike. For puts, this means the underlying value is less than the strike.
+
+Out-of-the-money (OTM) options are those that would not be exercised if we were at expiration. For calls, this means the underlying value is less than the strike. For puts, this means the underlying value is greater than the strike.
+
+At-the-money (ATM) options are those where the underlying value is equal to the strike. Technically, it's rare for an underlying to be trading at exactly the same price as the strike, so traders typically refer to the options with the strikes closest to the underlying as ATM.
+
+              </td>
+              <td class="parenthetical">
+                
+
+
+              </td>
+              </tr>
+            </tbody>
+          </table>
+          </td>
+        </tr>
+      </table>
+  </div>
+</body>
+</html>
