@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Options Education</title>
+  <link rel="stylesheet" type="text/css" href="static/main.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.css" rel="stylesheet" type="text/css">
+  <!-- Load d3.js and c3.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+  <script type="text/javascript" src="static/utils.js"></script>
+</head>
+<body>
+  <div id="container">
+    <table style="width: 100%; vertical-align: top;">
+      <tr>
+        <h2>
+          <a href="./base.html">UCF Options Curriculum</a>
+          
+Payoff
+
+        </h2>
+      </tr>
+      <hr>
+      <tr>
+        <td style="width: 13em; font-size: 80%; vertical-align: top;">
+        <div style="margin-top: 20px;"></div>
+          <ul class="navlist">
+            <a href="./about.html">About</a>
+          </ul>
+        
+          <ul class="navlist">
+            <li>
+            <b>Basic Terminology</b>
+              <ul class="subnavlist">
+              
+                <li>
+                  <a href="./calls_and_puts.html">Calls and Puts</a>
+                </li>
+              
+                <li>
+                  <a href="./optionality.html">Optionality</a>
+                </li>
+              
+                <li>
+                  <a href="./contract_specifications.html">Contracts</a>
+                </li>
+              
+                <li>
+                  <a href="./when_to_exercise.html">Exercising</a>
+                </li>
+              
+                <li>
+                  <a href="./moneyness.html">Moneyness</a>
+                </li>
+              
+                <li>
+                  <a href="./down_upside.html">Downside vs Upside</a>
+                </li>
+              
+                <li>
+                  <a href="./options_cost.html">Cost of Options</a>
+                </li>
+              
+              </ul>
+            </li>
+          </ul>
+        
+          <ul class="navlist">
+            <li>
+            <b>Profit Diagrams</b>
+              <ul class="subnavlist">
+              
+                <li>
+                  <a href="./payoff_diagram.html">Payoff</a>
+                </li>
+              
+                <li>
+                  <a href="./profit_at_expiration.html">Profit at Expiration</a>
+                </li>
+              
+              </ul>
+            </li>
+          </ul>
+        
+        </td>
+        <td>
+          <table id="main_outlay">
+            <tbody>
+              <tr>
+              <td class="main_content">
+                
+We explained payoff in the When to Exercise section. Payoff represents the money made or lost in an option position. To determine your payoff, there are four factors:
+
+<ul>
+<li> Option type (call / put) </li>
+<li> Strike price </li>
+<li> Market price of underlying </li>
+<li> Quantity of options (can be negative to represent a short position) </li>
+</ul>
+
+When you open an option position, the option type, strike price, and quantity of options are fixed. Thus, the only missing determinant for calculating payoff is the market price of the underlying. Note: Payoff assumes you either let the option expire worthless, or you exercise it and close the position in the underlying.
+
+For example, if you buy 1 call option on BAC (Bank of America Corporation) stock with a strike of $17, then the only factor left to determine the payoff is BAC's stock price. If BAC is trading at $16, then you would not exercise the call option, and your payoff is $0. If BAC is trading at $20, then you would exercise the call option, and your payoff is $3 (use the call to buy BAC for $17, then sell it on the market for $20). 
+
+Since your payoff only depends on the underlying price after you open the position, we can plot it against the underlying to create a payoff diagram. Here is the payoff diagram for a long call option with strike 17 (the arrow marks the strike):
+<br>
+<div id="long_call_chart"></div>
+First, notice that the payoff for a long call option (here, long means we own the option) is always greater than or equal to 0. This is because the option owner wouldn't exercise the option if it yielded a negative payoff. Next, notice that the "kink" in the graph happens at the strike price. When we are ITM (underlying > strike), our payoff increases by $1 for each $1 increase in the underlying. This makes sense; if the underlying is worth $1 more, but we can buy it for a fixed strike price by using our call option, then our payoff $1 more.
+
+Here is the payoff diagram for a long put option with a strike of $40:
+<div id="long_put_chart"></div>
+
+
+Again, the payoff is always greater than or equal to 0 and the kink happens to the strike. This time, however, our payoff decreases by $1 for each $1 increase in the underlying whenever we are ITM (underlying < strike). If an underlying is $1 cheaper and we can sell it for a fixed strike price, then our payoff will be $1 greater.
+
+The above payoff diagrams are for long option positions, or for the option buyers. Here is the payoff diagram for the same call option with strike of $17, but a short position (option seller):
+<div id="short_call_chart"></div>
+
+
+The short call option payoff diagram is just the long call option payoff diagram flipped over the x-axis. This makes sense; the option buyer's gain is the option seller's loss. We see the same pattern in the short put option payoff diagram:
+<div id="short_put_chart"></div>
+<script type="text/javascript">
+    generate_simple_chart('#long_call_chart', 'Long Call', 17, 0, call_payoff, 26);
+    generate_simple_chart('#long_put_chart', 'Long Put', 40, 0, short_call_payoff, 48);
+    generate_simple_chart('#short_call_chart', 'Short Call', 17, 0, put_payoff, 26);
+    generate_simple_chart('#short_put_chart', 'Short Put', 40, 0, short_put_payoff, 48);
+</script>
+
+
+
+
+              </td>
+              <td class="parenthetical">
+                
+Note: The multiplier on American stock options is typically 100, so this payoff of $3 would be $300 if you actually bought the option. We typically avoid the multiplier when discussing payoff.
+
+              </td>
+              </tr>
+            </tbody>
+          </table>
+          </td>
+        </tr>
+      </table>
+  </div>
+</body>
+</html>

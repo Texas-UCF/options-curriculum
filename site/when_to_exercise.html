@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Options Education</title>
+  <link rel="stylesheet" type="text/css" href="static/main.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.css" rel="stylesheet" type="text/css">
+  <!-- Load d3.js and c3.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+  <script type="text/javascript" src="static/utils.js"></script>
+</head>
+<body>
+  <div id="container">
+    <table style="width: 100%; vertical-align: top;">
+      <tr>
+        <h2>
+          <a href="./base.html">UCF Options Curriculum</a>
+          
+Exercising
+
+        </h2>
+      </tr>
+      <hr>
+      <tr>
+        <td style="width: 13em; font-size: 80%; vertical-align: top;">
+        <div style="margin-top: 20px;"></div>
+          <ul class="navlist">
+            <a href="./about.html">About</a>
+          </ul>
+        
+          <ul class="navlist">
+            <li>
+            <b>Basic Terminology</b>
+              <ul class="subnavlist">
+              
+                <li>
+                  <a href="./calls_and_puts.html">Calls and Puts</a>
+                </li>
+              
+                <li>
+                  <a href="./optionality.html">Optionality</a>
+                </li>
+              
+                <li>
+                  <a href="./contract_specifications.html">Contracts</a>
+                </li>
+              
+                <li>
+                  <a href="./when_to_exercise.html">Exercising</a>
+                </li>
+              
+                <li>
+                  <a href="./moneyness.html">Moneyness</a>
+                </li>
+              
+                <li>
+                  <a href="./down_upside.html">Downside vs Upside</a>
+                </li>
+              
+                <li>
+                  <a href="./options_cost.html">Cost of Options</a>
+                </li>
+              
+              </ul>
+            </li>
+          </ul>
+        
+          <ul class="navlist">
+            <li>
+            <b>Profit Diagrams</b>
+              <ul class="subnavlist">
+              
+                <li>
+                  <a href="./payoff_diagram.html">Payoff</a>
+                </li>
+              
+                <li>
+                  <a href="./profit_at_expiration.html">Profit at Expiration</a>
+                </li>
+              
+              </ul>
+            </li>
+          </ul>
+        
+        </td>
+        <td>
+          <table id="main_outlay">
+            <tbody>
+              <tr>
+              <td class="main_content">
+                
+Up to this point, we've emphasized that owning an option gives you the right to exercise. In this section, we'll explain when you should exercise that right. For now, we'll only discuss exercising at expiration. Early exercising is possible with American options; however, it doesn't occur often. Nevertheless, we'll cover it at a later point.
+
+Suppose you own the following option:
+
+Type: Call
+Underlying: Chocolate Chip Cookie
+Strike: $1
+Expiration Date: Today
+Multiplier: 1
+Exercise Condition: American
+Settlement Type: Physical
+
+Owning this option means you have the right to buy 1 chocolate chip cookie for $1. To determine whether or not you should exercise the option, you need to know the market value of a chocolate chip cookie. The market value just represents the price at which chocolate chip cookies are currently trading at in the market. Technically, you may not be able to buy and sell the cookie at the same price; however, we'll assume you can to simplify the calculations for now.
+
+Suppose the current market value of a chocolate chip cookie is $0.50. Since the market value is less than the strike, you would not choose to exercise the call option. Why exercise the call and buy the cookie for $1 when you can buy the cookie for $0.50 in the market?
+
+Now suppose the current market value of a chocolate chip cookie is $1.20. Since the market value is greater than the strike, you would choose to exercise the call option. By exercising the option, you would pay $1 for the cookie. Then you could sell the cookie on the market and receive $1.20 for a payoff of $0.20. The option seller would be forced to buy a cookie on the market for $1.20 and then sell the cookie to you for $1 for a payoff of -$0.20. 
+
+As you can see, the payoff for the option owner and option seller are opposite. Payoff is simply the gain or loss for an option trader from the option. If the option is not exercised, the payoff is $0 for both parties. If the option is exercised, the payoff is the outcome from buying/selling the underlying at the option's strike price, and closing the position in the underlying at the market's price.
+
+Now suppose you own an option with the same specifications, but it is a put instead of a call. So you have the right to sell 1 chocolate chip cookie for $1. Again, you need the market value of a cookie to determine whether or not you should exercise your option.
+
+If the market value of a cookie is $0.50, you would exercise the put option because the market value is less than the strike. You can buy the cookie on the market for $0.50, and then you can sell the cookie for $1 by exercising the put -- a payoff of $0.50. Again, the payoff for the option seller is opposite, -$0.50.
+
+If the market value of a cookie is $1.20, you would not exercise the put option because the market value is greater than the strike. Why exercise the put and sell a cookie for $1 when you can sell a cookie for $1.20 in the market?
+
+In summary, you exercise calls when the market value of the underlying is greater than the strike, because then you are buying something for cheaper than its current price. You exercise puts when the market value of the underlying is less than the strike, because then you are selling something for more more than its current price. Anytime you exercise the option, your payoff is positive, and the option seller's payoff is negative.
+
+
+              </td>
+              <td class="parenthetical">
+                
+
+
+              </td>
+              </tr>
+            </tbody>
+          </table>
+          </td>
+        </tr>
+      </table>
+  </div>
+</body>
+</html>

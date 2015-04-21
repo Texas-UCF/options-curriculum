@@ -1,0 +1,49 @@
+body {
+  font-family: 'Georgia', serif;
+}
+
+a {
+  text-decoration: none;
+  color: #c7c3c4;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #85C7F2;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: -1em;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: normal;
+}
+
+li {
+  margin-left: -1em;
+}
+
+#container {
+  width: 80%;
+  min-width: 1000px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+#main_outlay {
+  width: 100%;
+}
+
+.parenthetical {
+  width: 20%;
+  font-size: 80%;
+  color: #c7c3c4;
+  vertical-align: top;
+  padding-left: 20px;
+  white-space: pre-wrap;
+}
+
+.main_content {
+  white-space: pre-wrap;
+}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+Moneyness
+{% endblock title %}
+
+{% block content %}
+Moneyness refers to the relationship between the strike price of an option, and the market value of the underlying. In-the-money (ITM) options are those that would be exercised if we were at expiration. For calls, this means the underlying value is greater than the strike. For puts, this means the underlying value is less than the strike.
+
+Out-of-the-money (OTM) options are those that would not be exercised if we were at expiration. For calls, this means the underlying value is less than the strike. For puts, this means the underlying value is greater than the strike.
+
+At-the-money (ATM) options are those where the underlying value is equal to the strike. Technically, it's rare for an underlying to be trading at exactly the same price as the strike, so traders typically refer to the options with the strikes closest to the underlying as ATM.
+{% endblock content %}
+
+{% block parentheticals %}
+
+{% endblock parentheticals %}
