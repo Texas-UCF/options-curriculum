@@ -35,7 +35,7 @@ if __name__ == '__main__':
       contexts=[
         ('.*.html', get_sections),
       ],
-      outpath="site",
+      outpath=".",
       staticpaths=['static'],
     )
 
