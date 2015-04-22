@@ -15,8 +15,8 @@
       <tr>
         <h2>
           <a href="./index.html">UCF Options Curriculum</a>
-          
-          
+          {% block title %}
+          {% endblock title %}
         </h2>
       </tr>
       <hr>
@@ -26,73 +26,32 @@
           <ul class="navlist">
             <a href="./about.html">About</a>
           </ul>
-        
+        {% for section_name, posts_dict in sections.iteritems() %}
           <ul class="navlist">
             <li>
-            <b>Basic Terminology</b>
+            <b>{{ section_name}}</b>
               <ul class="subnavlist">
-              
+              {% for post_name, post_url in posts_dict.iteritems() %}
                 <li>
-                  <a href="./calls_and_puts.html">Calls and Puts</a>
+                  <a href="./{{ post_url }}">{{ post_name }}</a>
                 </li>
-              
-                <li>
-                  <a href="./optionality.html">Optionality</a>
-                </li>
-              
-                <li>
-                  <a href="./contract_specifications.html">Contracts</a>
-                </li>
-              
-                <li>
-                  <a href="./when_to_exercise.html">Exercising</a>
-                </li>
-              
-                <li>
-                  <a href="./moneyness.html">Moneyness</a>
-                </li>
-              
-                <li>
-                  <a href="./down_upside.html">Downside vs Upside</a>
-                </li>
-              
-                <li>
-                  <a href="./options_cost.html">Cost of Options</a>
-                </li>
-              
+              {% endfor %}
               </ul>
             </li>
           </ul>
-        
-          <ul class="navlist">
-            <li>
-            <b>Profit Diagrams</b>
-              <ul class="subnavlist">
-              
-                <li>
-                  <a href="./payoff_diagram.html">Payoff</a>
-                </li>
-              
-                <li>
-                  <a href="./profit_at_expiration.html">Profit at Expiration</a>
-                </li>
-              
-              </ul>
-            </li>
-          </ul>
-        
+        {% endfor %}
         </td>
         <td>
           <table id="main_outlay">
             <tbody>
               <tr>
               <td class="main_content">
-                
-                
+                {% block content %}
+                {% endblock content %}
               </td>
               <td class="parenthetical">
-                
-                
+                {% block parentheticals %}
+                {% endblock parentheticals %}
               </td>
               </tr>
             </tbody>
