@@ -1,5 +1,4 @@
 from staticjinja import make_site
-from markdown import markdown
 from collections import OrderedDict as od
 def get_sections():
   sections = od([
