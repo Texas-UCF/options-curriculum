@@ -89,14 +89,17 @@ Contracts
               <tr>
               <td class="main_content">
                 
-Each option has several specifications which fully describe the contract (of course, this only applies to exchange-traded options). Here are the main ones:
+Each option has several specifications which fully describe the contract (of course, this only applies to exchange-traded options). The main ones follow.
 
 As mentioned earlier, there are two types of options -- calls and puts. Calls give the option holder the right to buy, and puts give the right to sell.
 Each option has an underlying which refers to the asset that will be traded if the option is exercised. For example, if I own a call option where the underlying is AAPL (Apple) stock, then I will buy AAPL stock if I exercise the option. Common option underlyings include stocks, indices, and futures.
 If the option is exercised, the price at which the underlying is traded is the strike price. Going back to the previous example, if I exercise a call option on AAPL stock where the strike is $120, then I will buy AAPL stock from the option seller for $120.
+
 Each option must be exercised by its expiration date, or else it expires. Each underlying asset will typically have options traded at a variety of expirations. You will usually see some combination of weekly, monthly, quarterly, and annual expirations.
 Options have multipliers, which control the final contract size. For example, the multiplier for stock options in the US is 100, meaning if I exercise 1 call option with the underlying of AAPL stock, then I will buy 100 shares of AAPL. If I exercise 6 call options with the same underlying, then I will buy 600 shares.
+
 There are two popular exercise conditions -- American and European. European options can be exercised only at the expiration date. American options can be exercised any time at or before the expiration date. Most US stock options are American-style; however, there are several European-style options traded in the US as well.
+
 There are two popular settlement types -- physical and cash. Physically settled options result in the underlying actually being traded upon exercise. So if I exercise a call option with the underlying of AAPL stock, I would actually pay money to buy the AAPL stock. Cash settled options only result in cash being given upon exercise. For example, if I exercise a call option with the underlying of the S&P 500 index, I would only receive the difference between the S&P 500 index and the strike price. Cash settlement is typically used when the underlying isn't actually something that can be traded.
 
 Here's an example of an option contract and all of its specifications:
