@@ -4,6 +4,7 @@ def get_sections():
   sections = od([
     ('Basic Terminology', od(
         [
+          ('Derivatives', 'derivatives.html'),
           ('Calls and Puts', 'calls_and_puts.html'),
           ('Optionality', 'optionality.html'),
           ('Contracts', 'contract_specifications.html'),

@@ -1,5 +1,6 @@
 body {
-  font-family: 'Georgia', serif;
+  font-family: 'Candara', sans-serif;
+  font-size: 90%;
 }
 
 a {
@@ -44,6 +45,28 @@ li {
   white-space: pre-wrap;
 }
 
+.parenthetical a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.parenthetical a:hover {
+  text-decoration: none;
+  color: #85C7F2;
+}
+
 .main_content {
   white-space: pre-wrap;
+}
+
+.main_content ul {
+  list-style-type: disc;
+  margin-left: 0em;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: normal;
+}
+
+.main_content li {
+  margin-left: -1em;
 }

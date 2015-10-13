@@ -1,12 +1,18 @@
 {% extends "base.html" %}
+
 {% block title %}
 Calls and Puts
 {% endblock title %}
 
 {% block content %}
-There are two types of options -- calls and puts. A call option gives the owner the right to buy an underlying at a specified price before a certain date. A put option gives the owner the right to sell an underlying at a specified price before a certain date. It's important to recognize that buying calls and buying puts do not give the trader opposite payoffs. Instead, buying calls and selling calls give the trader opposite payoffs, and the same goes for buying and puts and selling puts. In other words, if I buy a call option from you, my profit is your loss (ignoring any transaction fees).
+There are two types of options:
+<ul>
+	<li><b>Calls</b> give the owner the right to buy something</li>
+	<li><b>Puts</b> give the owner the right to sell something</li>
+</ul>
+It's important to recognize that buying calls and buying puts do <i>not</i> give opposite outcomes. Instead, buying calls and selling calls give opposite outcomes, and the same goes for buying and selling puts. Thus, if I buy a call from you, we will have opposite outcomes; my profit will be your loss (ignoring any transaction fees).
 {% endblock content %}
 
 {% block parentheticals %}
-
+Calls and puts may give owners completely different rights, but eventually you'll learn that the difference is almost negligible.
 {% endblock parentheticals %}

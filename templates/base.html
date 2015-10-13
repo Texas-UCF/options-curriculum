@@ -22,16 +22,22 @@
       <hr>
       <tr>
         <td style="width: 13em; font-size: 80%; vertical-align: top;">
-        <div style="margin-top: 45px;"></div>
-          <ul class="navlist">
-            <a href="./about.html">About</a>
-          </ul>
-        {% for section_name, posts_dict in sections.iteritems() %}
+        <div style="margin-top: 41px;"></div>
           <ul class="navlist">
             <li>
-            <b>{{ section_name}}</b>
               <ul class="subnavlist">
-              {% for post_name, post_url in posts_dict.iteritems() %}
+                <li>
+                  <a href="./about.html">About</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        {% for section_name, posts_dict in sections.items() %}
+          <ul class="navlist">
+            <li>
+            <b>{{section_name}}</b>
+              <ul class="subnavlist">
+              {% for post_name, post_url in posts_dict.items() %}
                 <li>
                   <a href="./{{ post_url }}">{{ post_name }}</a>
                 </li>
@@ -41,7 +47,7 @@
           </ul>
         {% endfor %}
         </td>
-        <td>
+        <td style="vertical-align: top;">
           <table id="main_outlay">
             <tbody>
               <tr>
@@ -50,6 +56,7 @@
                 {% endblock content %}
               </td>
               <td class="parenthetical">
+                <div style="margin-top: -19px;"></div>
                 {% block parentheticals %}
                 {% endblock parentheticals %}
               </td>
