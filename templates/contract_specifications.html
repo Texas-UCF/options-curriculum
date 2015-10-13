@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+
 {% block title %}
-Contracts
+Contract Specifications
 {% endblock title %}
 
 {% block content %}
-Each option has several specifications which fully describe the contract (of course, this only applies to exchange-traded options). The main ones follow.
+Each option has several specifications which fully describe the contract.
 
 As mentioned earlier, there are two types of options -- calls and puts. Calls give the option holder the right to buy, and puts give the right to sell.
 Each option has an underlying which refers to the asset that will be traded if the option is exercised. For example, if I own a call option where the underlying is AAPL (Apple) stock, then I will buy AAPL stock if I exercise the option. Common option underlyings include stocks, indices, and futures.
@@ -32,5 +33,4 @@ If I buy 1 of the above option, that means I own the right to sell 100 shares of
 {% endblock content %}
 
 {% block parentheticals %}
-
 {% endblock parentheticals %}

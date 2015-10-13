@@ -13,20 +13,7 @@ a:hover {
   color: #85C7F2;
 }
 
-ul {
-  list-style-type: none;
-  margin-left: -1em;
-  margin-top: 0;
-  margin-bottom: 0;
-  white-space: normal;
-}
-
-li {
-  margin-left: -1em;
-}
-
 #container {
-  width: 80%;
   min-width: 1000px;
   max-width: 1000px;
   margin: 40px auto;
@@ -36,12 +23,33 @@ li {
   width: 100%;
 }
 
+.navigation {
+  width: 20%;
+  font-size: 80%;
+  vertical-align: top;
+  padding-right: 15px;
+  padding-top: 38px;
+}
+
+.navigation ul {
+  list-style-type: none;
+  margin-left: -1em;
+  margin-bottom: 0em;
+  margin-top: 0em;
+  white-space: normal;
+}
+
+.navigation li {
+  margin-left: -1em;
+}
+
 .parenthetical {
   width: 20%;
   font-size: 80%;
   color: #c7c3c4;
   vertical-align: top;
-  padding-left: 20px;
+  padding-left: 15px;
+  padding-top: 10px;
   white-space: pre-wrap;
 }
 

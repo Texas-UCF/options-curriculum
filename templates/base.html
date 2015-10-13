@@ -11,7 +11,7 @@
 </head>
 <body>
   <div id="container">
-    <table style="width: 100%; vertical-align: top;">
+    <table>
       <tr>
         <h2>
           <a href="./index.html">UCF Options Curriculum</a>
@@ -21,8 +21,7 @@
       </tr>
       <hr>
       <tr>
-        <td style="width: 13em; font-size: 80%; vertical-align: top;">
-        <div style="margin-top: 41px;"></div>
+        <td class="navigation">
           <ul class="navlist">
             <li>
               <ul class="subnavlist">
@@ -47,25 +46,16 @@
           </ul>
         {% endfor %}
         </td>
-        <td style="vertical-align: top;">
-          <table id="main_outlay">
-            <tbody>
-              <tr>
-              <td class="main_content">
-                {% block content %}
-                {% endblock content %}
-              </td>
-              <td class="parenthetical">
-                <div style="margin-top: -19px;"></div>
-                {% block parentheticals %}
-                {% endblock parentheticals %}
-              </td>
-              </tr>
-            </tbody>
-          </table>
-          </td>
-        </tr>
-      </table>
+        <td class="main_content">
+          {% block content %}
+          {% endblock content %}
+        </td>
+        <td class="parenthetical">
+          {% block parentheticals %}
+          {% endblock parentheticals %}
+        </td>
+      </tr>
+    </table>
   </div>
 </body>
 </html>

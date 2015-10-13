@@ -11,7 +11,7 @@
 </head>
 <body>
   <div id="container">
-    <table style="width: 100%; vertical-align: top;">
+    <table>
       <tr>
         <h2>
           <a href="./index.html">UCF Options Curriculum</a>
@@ -22,8 +22,7 @@ Profit at Expiration
       </tr>
       <hr>
       <tr>
-        <td style="width: 13em; font-size: 80%; vertical-align: top;">
-        <div style="margin-top: 41px;"></div>
+        <td class="navigation">
           <ul class="navlist">
             <li>
               <ul class="subnavlist">
@@ -52,7 +51,7 @@ Profit at Expiration
                 </li>
               
                 <li>
-                  <a href="./contract_specifications.html">Contracts</a>
+                  <a href="./contract_specifications.html">Contract Specifications</a>
                 </li>
               
                 <li>
@@ -93,12 +92,8 @@ Profit at Expiration
           </ul>
         
         </td>
-        <td style="vertical-align: top;">
-          <table id="main_outlay">
-            <tbody>
-              <tr>
-              <td class="main_content">
-                
+        <td class="main_content">
+          
 Whenever an option is traded, the option buyer pays the option seller some price called the premium. Premium is just a fancy term for the cost of the option itself. Options always cost money to buy because the option buyer is guaranteed to have a positive (or $0) payoff, whereas the option seller is guaranteed to have a negative (or $0) payoff.
 
 We can incorporate the premium into our payoff diagrams to create profit at expiration diagrams. Here is the profit diagram for a long call option with a strike of $17 that costs $2:
@@ -220,19 +215,14 @@ The short call option profit diagram is just the long call option profit diagram
 </script>
 
 
-              </td>
-              <td class="parenthetical">
-                <div style="margin-top: -19px;"></div>
-                
+        </td>
+        <td class="parenthetical">
+          
 Note: We include the at expiration because these diagrams show the profit (or loss) for an option assuming there is no time remaining till expiration. When there is time left, we cannot simply modify the payoff diagram with the premium. This will be explained in the next chapter.
 
-              </td>
-              </tr>
-            </tbody>
-          </table>
-          </td>
-        </tr>
-      </table>
+        </td>
+      </tr>
+    </table>
   </div>
 </body>
 </html>

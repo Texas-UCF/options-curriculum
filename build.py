@@ -7,7 +7,7 @@ def get_sections():
           ('Derivatives', 'derivatives.html'),
           ('Calls and Puts', 'calls_and_puts.html'),
           ('Optionality', 'optionality.html'),
-          ('Contracts', 'contract_specifications.html'),
+          ('Contract Specifications', 'contract_specifications.html'),
           ('Exercising', 'when_to_exercise.html'),
           ('Moneyness', 'moneyness.html'),
           ('Downside vs Upside', 'down_upside.html'),
