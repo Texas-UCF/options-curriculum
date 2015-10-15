@@ -55,7 +55,7 @@ Contract Specifications
                 </li>
               
                 <li>
-                  <a href="./when_to_exercise.html">Exercising</a>
+                  <a href="./when_to_exercise.html">When To Exercise</a>
                 </li>
               
                 <li>
@@ -94,35 +94,46 @@ Contract Specifications
         </td>
         <td class="main_content">
           
-Each option has several specifications which fully describe the contract.
+Each option has several specifications which describe the contract. Here are the common ones:
+<ul>
+	<li><b>Type:</b> call or put</li>
+	<li><b>Underlying:</b> product that will trade if option is exercised</li>
+	<li><b>Strike:</b> price at which underlying will trade if option is exercised</li>
+	<li><b>Expiration:</b> final time at which the option can be exercised</li>
+	<li><b>Multiplier:</b> amount of the underlying that will trade if option is exercised</li>
+</ul>
+Suppose I own an option that gives me the right to sell 100 boxes of pizza for $8 on June 27, 2020. Here are the specifications broken down
+<ul>
+	<li><b>Type:</b> put (the option gives the right to <i>sell</i>)</li>
+	<li><b>Underlying:</b> box of pizza</li>
+	<li><b>Strike:</b> $8</li>
+	<li><b>Expiration:</b> June 27, 2020</li>
+	<li><b>Multiplier:</b> 100</li>
+</ul>
+Another specification is the <b>exercise condition</b> which describes when the option can be exercised to trade the underlying. There are two common choices:
+<ul>
+	<li><b>European:</b> option can only be exercised <i>on</i> expiration day</li>
+	<li><b>American:</b> option can be exercised anytime up to or on expiration day</li>
+</ul>
+The example put option above on the pizza boxes was European because we only had the right to sell <i>on</i> June 27, 2020. If we had the right to sell anytime from until June 27, 2020, it would be American.
 
-As mentioned earlier, there are two types of options -- calls and puts. Calls give the option holder the right to buy, and puts give the right to sell.
-Each option has an underlying which refers to the asset that will be traded if the option is exercised. For example, if I own a call option where the underlying is AAPL (Apple) stock, then I will buy AAPL stock if I exercise the option. Common option underlyings include stocks, indices, and futures.
-If the option is exercised, the price at which the underlying is traded is the strike price. Going back to the previous example, if I exercise a call option on AAPL stock where the strike is $120, then I will buy AAPL stock from the option seller for $120.
+The final specification we will discuss is the <b>settlement method</b> which describes what is exchanged between the two parties if the option is exercised. There are two common choices:
+<ul>
+	<li><b>Physical:</b> the actual underlying is traded for money</li>
+	<li><b>Cash:</b> ...it's complicated</li>
+</ul>
+Using the example put option above, if we actually sell 100 boxes of pizza and receive $800 when we exercise the option, then it uses physical settlement. If instead we decide to just exchange the cash difference between the strike and a cost of a box of pizza today, it would be cash settled.
 
-Each option must be exercised by its expiration date, or else it expires. Each underlying asset will typically have options traded at a variety of expirations. You will usually see some combination of weekly, monthly, quarterly, and annual expirations.
-Options have multipliers, which control the final contract size. For example, the multiplier for stock options in the US is 100, meaning if I exercise 1 call option with the underlying of AAPL stock, then I will buy 100 shares of AAPL. If I exercise 6 call options with the same underlying, then I will buy 600 shares.
-
-There are two popular exercise conditions -- American and European. European options can be exercised only at the expiration date. American options can be exercised any time at or before the expiration date. Most US stock options are American-style; however, there are several European-style options traded in the US as well.
-
-There are two popular settlement types -- physical and cash. Physically settled options result in the underlying actually being traded upon exercise. So if I exercise a call option with the underlying of AAPL stock, I would actually pay money to buy the AAPL stock. Cash settled options only result in cash being given upon exercise. For example, if I exercise a call option with the underlying of the S&P 500 index, I would only receive the difference between the S&P 500 index and the strike price. Cash settlement is typically used when the underlying isn't actually something that can be traded.
-
-Here's an example of an option contract and all of its specifications:
-
-Type: Put
-Underlying: FB (Facebook) stock
-Strike: $80
-Expiration Date: January 15, 2016
-Multiplier: 100
-Exercise Condition: American
-Settlement Type: Physical
-
-If I buy 1 of the above option, that means I own the right to sell 100 shares of FB for a price of $80 anytime between now and January 15, 2016.
-
+Cash settlement is useful when the underlying is difficult (or impossible) to hold. We'll revisit this settlement method and give a better explanation with examples when we discuss exercising options.
 
         </td>
         <td class="parenthetical">
           
+We usually talk about the expiration <i>date</i>, but technically the expiration <i>time</i> should also be specified.
+
+Regardless of the multiplier, the strike is the price at which <i>one</i> of the underlying will trade. So if the option is exercised, the amount of money that is given is actually strike * multiplier.
+
+The exercise condition names don't actually suggest any geographical meaning. You can find both European and American options everywhere.
 
         </td>
       </tr>

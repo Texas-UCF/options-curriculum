@@ -8,7 +8,7 @@ def get_sections():
           ('Calls and Puts', 'calls_and_puts.html'),
           ('Optionality', 'optionality.html'),
           ('Contract Specifications', 'contract_specifications.html'),
-          ('Exercising', 'when_to_exercise.html'),
+          ('When To Exercise', 'when_to_exercise.html'),
           ('Moneyness', 'moneyness.html'),
           ('Downside vs Upside', 'down_upside.html'),
           ('Cost of Options', 'options_cost.html'),
@@ -39,4 +39,4 @@ if __name__ == '__main__':
       staticpaths=['static'],
     )
 
-  site.render(use_reloader=True)
+  site.render(use_reloader=False)

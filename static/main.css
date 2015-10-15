@@ -1,3 +1,7 @@
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: 'Candara', sans-serif;
   font-size: 90%;
@@ -14,7 +18,7 @@ a:hover {
 }
 
 #container {
-  min-width: 1000px;
+  min-width: 640px;
   max-width: 1000px;
   margin: 40px auto;
 }
@@ -25,6 +29,7 @@ a:hover {
 
 .navigation {
   width: 20%;
+  min-width: 120px;
   font-size: 80%;
   vertical-align: top;
   padding-right: 15px;
@@ -45,6 +50,7 @@ a:hover {
 
 .parenthetical {
   width: 20%;
+  min-width: 120px;
   font-size: 80%;
   color: #c7c3c4;
   vertical-align: top;

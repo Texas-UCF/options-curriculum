@@ -16,7 +16,7 @@
         <h2>
           <a href="./index.html">UCF Options Curriculum</a>
           
-Exercising
+When To Exercise
 
         </h2>
       </tr>
@@ -55,7 +55,7 @@ Exercising
                 </li>
               
                 <li>
-                  <a href="./when_to_exercise.html">Exercising</a>
+                  <a href="./when_to_exercise.html">When To Exercise</a>
                 </li>
               
                 <li>
@@ -94,31 +94,33 @@ Exercising
         </td>
         <td class="main_content">
           
-Up to this point, we've emphasized that owning an option gives you the right to exercise. In this section, we'll explain when you should exercise that right. For now, we'll only discuss exercising at expiration. Early exercising is possible with American options; however, it doesn't occur often. Nevertheless, we'll cover it at a later point.
+In this section, we discuss when you should and shouldn't exercise that right. For now, we'll only discuss exercising at expiration. Remember, American options give you the right to exercise early; however, it doesn't occur often. Nevertheless, we'll cover it at a later point.
 
 Suppose you own the following option:
+<ul>
+	<li><b>Type:</b> call</li>
+	<li><b>Underlying:</b> gallon of milk</li>
+	<li><b>Strike:</b> $3</li>
+	<li><b>Expiration:</b> right now</li>
+	<li><b>Multiplier:</b> 5</li>
+	<li><b>Exercise condition:</b> irrelevant, American and European options are the same at expiration</li>
+	<li><b>Settlement method:</b> physical</li>
+</ul>
+This option gives you the right to buy 5 gallons of milk for $3 each. To determine whether or not you should exercise the option, you need to know how much milk currently costs. If you can buy milk for $2 at your local grocery store (let this be the <b>market price</b>), you wouldn't want to exercise your call option and buy milk for $3; you would just let your option expire.
 
-Type: Call
-Underlying: Chocolate Chip Cookie
-Strike: $1
-Expiration Date: Today
-Multiplier: 1
-Exercise Condition: American
-Settlement Type: Physical
+If the current price of milk at your grocery store (the market price) is $4, then you should exercise your option and buy milk for $3. Even if you don't want the milk, you can sell it at the market price of $4 and make a $1 payoff per gallon of milk. Since the multiplier is 5, your total payoff from the option is $5.
 
-Owning this option means you have the right to buy 1 chocolate chip cookie for $1. To determine whether or not you should exercise the option, you need to know the market value of a chocolate chip cookie. The market value just represents the price at which chocolate chip cookies are currently trading at in the market. Technically, you may not be able to buy and sell the cookie at the same price; however, we'll assume you can to simplify the calculations for now.
-
-Suppose the current market value of a chocolate chip cookie is $0.50. Since the market value is less than the strike, you would not choose to exercise the call option. Why exercise the call and buy the cookie for $1 when you can buy the cookie for $0.50 in the market?
-
-Now suppose the current market value of a chocolate chip cookie is $1.20. Since the market value is greater than the strike, you would choose to exercise the call option. By exercising the option, you would pay $1 for the cookie. Then you could sell the cookie on the market and receive $1.20 for a payoff of $0.20. The option seller would be forced to buy a cookie on the market for $1.20 and then sell the cookie to you for $1 for a payoff of -$0.20. 
+The counterparty of your option was <i>obligated</i> to sell milk to you for $3, so unless the counterparty already owns milk, s/he will have to buy milk for $4 first from the market. Then, she sells milk for $3 to you to make a -$1 payoff per gallon of milk.
 
 As you can see, the payoff for the option owner and option seller are opposite. Payoff is simply the gain or loss for an option trader from the option. If the option is not exercised, the payoff is $0 for both parties. If the option is exercised, the payoff is the outcome from buying/selling the underlying at the option's strike price, and closing the position in the underlying at the market's price.
 
-Now suppose you own an option with the same specifications, but it is a put instead of a call. So you have the right to sell 1 chocolate chip cookie for $1. Again, you need the market value of a cookie to determine whether or not you should exercise your option.
+Now suppose you own an option with the same specifications, but it is a put instead of a call. So you have the right to sell 5 gallons of milk for $3. Again, you need the market value of a gallon of milk to determine whether or not you should exercise your option.
 
-If the market value of a cookie is $0.50, you would exercise the put option because the market value is less than the strike. You can buy the cookie on the market for $0.50, and then you can sell the cookie for $1 by exercising the put -- a payoff of $0.50. Again, the payoff for the option seller is opposite, -$0.50.
+If the market value of a cookie is $0.50, you would exercise the put option because the market value is less than the strike. You can buy the gallon of milk on the market for $0.50, and then you can sell the cookie for $3 by exercising the put -- a payoff of $2.50. Again, the payoff for the option seller is opposite, -$0.50.
 
-If the market value of a cookie is $1.20, you would not exercise the put option because the market value is greater than the strike. Why exercise the put and sell a cookie for $1 when you can sell a cookie for $1.20 in the market?
+If the market value of a cookie is $3.20, you would not exercise the put option because the market value is greater than the strike. Why exercise the put and sell a gallon of milk for $3 when you can sell a gallon of milk for $3.20 in the market?
+
+In summary, you exercise the option when your payoff is positive, and the option seller's payoff is negative. Payoff can never go below 
 
 In summary, you exercise calls when the market value of the underlying is greater than the strike, because then you are buying something for cheaper than its current price. You exercise puts when the market value of the underlying is less than the strike, because then you are selling something for more more than its current price. Anytime you exercise the option, your payoff is positive, and the option seller's payoff is negative.
 
@@ -126,7 +128,7 @@ In summary, you exercise calls when the market value of the underlying is greate
         </td>
         <td class="parenthetical">
           
-
+Option pricing and exercise recommendations assume that you can find the "market price" for the underlying product. The market price is what you could currently buy or sell the underlying for. Technically, the price you can buy something for is usually a bit higher than what you can sell it for. To make calculations simple, we'll assume they're the same.
 
         </td>
       </tr>
