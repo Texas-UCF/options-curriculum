@@ -99,10 +99,10 @@ Each option has several specifications which describe the contract. Here are the
 	<li><b>Type:</b> call or put</li>
 	<li><b>Underlying:</b> product that will trade if option is exercised</li>
 	<li><b>Strike:</b> price at which underlying will trade if option is exercised</li>
-	<li><b>Expiration:</b> final time at which the option can be exercised</li>
-	<li><b>Multiplier:</b> amount of the underlying that will trade if option is exercised</li>
+	<li><b>Expiration:</b> final time<sup>1</sup> at which the option can be exercised</li>
+	<li><b>Multiplier:</b> amount<sup>2</sup> of the underlying that will trade if option is exercised</li>
 </ul>
-Suppose I own an option that gives me the right to sell 100 boxes of pizza for $8 on June 27, 2020. Here are the specifications broken down
+Suppose I own an option that gives me the right to sell 100 boxes of pizza for $8 on June 27, 2020. Here are the specifications broken down:
 <ul>
 	<li><b>Type:</b> put (the option gives the right to <i>sell</i>)</li>
 	<li><b>Underlying:</b> box of pizza</li>
@@ -110,12 +110,12 @@ Suppose I own an option that gives me the right to sell 100 boxes of pizza for $
 	<li><b>Expiration:</b> June 27, 2020</li>
 	<li><b>Multiplier:</b> 100</li>
 </ul>
-Another specification is the <b>exercise condition</b> which describes when the option can be exercised to trade the underlying. There are two common choices:
+Another specification is the <b>exercise condition</b> which describes when the option can be exercised to trade the underlying. There are two common choices<sup>3</sup>:
 <ul>
 	<li><b>European:</b> option can only be exercised <i>on</i> expiration day</li>
 	<li><b>American:</b> option can be exercised anytime up to or on expiration day</li>
 </ul>
-The example put option above on the pizza boxes was European because we only had the right to sell <i>on</i> June 27, 2020. If we had the right to sell anytime from until June 27, 2020, it would be American.
+The example put option above on the pizza boxes was European because we only had the right to sell <i>on</i> June 27, 2020. If we had the right to sell anytime from now until June 27, 2020, it would be American.
 
 The final specification we will discuss is the <b>settlement method</b> which describes what is exchanged between the two parties if the option is exercised. There are two common choices:
 <ul>
@@ -124,16 +124,18 @@ The final specification we will discuss is the <b>settlement method</b> which de
 </ul>
 Using the example put option above, if we actually sell 100 boxes of pizza and receive $800 when we exercise the option, then it uses physical settlement. If instead we decide to just exchange the cash difference between the strike and a cost of a box of pizza today, it would be cash settled.
 
+For example, suppose you could buy the box of pizza for $5 today from your favorite pizza restaurant. Rather than buying 100 boxes of pizza for $5 and exercising your put option to sell the same 100 boxes of pizza for $8, you can just arrange to collect the $3 cash difference for each of the 100 boxes.
+
 Cash settlement is useful when the underlying is difficult (or impossible) to hold. We'll revisit this settlement method and give a better explanation with examples when we discuss exercising options.
 
         </td>
         <td class="parenthetical">
           
-We usually talk about the expiration <i>date</i>, but technically the expiration <i>time</i> should also be specified.
+1. We usually talk about the expiration <i>date</i>, but technically the expiration <i>time</i> should also be specified.
 
-Regardless of the multiplier, the strike is the price at which <i>one</i> of the underlying will trade. So if the option is exercised, the amount of money that is given is actually strike * multiplier.
+2. Regardless of the multiplier, the strike is the price at which <i>one</i> of the underlying will trade. So if the option is exercised, the amount of money that is actually paid is strike * multiplier.
 
-The exercise condition names don't actually suggest any geographical meaning. You can find both European and American options everywhere.
+3. The exercise condition names don't actually suggest any geographical meaning. You can find both European and American options everywhere.
 
         </td>
       </tr>
